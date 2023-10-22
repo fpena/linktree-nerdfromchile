@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { get } from '@vercel/edge-config';
 import { redirect } from 'next/navigation';
+import profilePic from "../public/avatar.png";
 
 export const dynamic = 'force-dynamic',
   runtime = 'edge';
@@ -121,7 +122,7 @@ export default async function HomePage() {
         priority
         className="rounded-full"
         alt={data.name}
-        src={data.avatar}
+        src={profilePic}
         width={96}
         height={96}
       />
