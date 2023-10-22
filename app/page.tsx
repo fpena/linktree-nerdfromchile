@@ -67,7 +67,7 @@ function LinkCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center p-1 w-full rounded-md hover:scale-105 transition-all bg-gray-100 mb-3 max-w-3xl"
+      className="flex items-center p-1 w-full rounded-full hover:scale-105 transition-all bg-gray-100 mb-3 max-w-3xl"
     >
       <div className="flex text-center w-full">
         <div className="w-10 h-10">
@@ -108,17 +108,12 @@ interface Link {
   image?: string;
 }
 
-interface Social {
-  href: string;
-  title: string;
-}
-
 export default async function HomePage() {
   const data: Data | undefined = await get('linktree');
 
   if (!data) {
     // not working yet https://github.com/vercel/next.js/issues/44232
-    redirect('https://linktr.ee/selenagomez');
+    redirect('https://linktr.ee/nerdfromchile');
   }
 
   return (
@@ -144,23 +139,6 @@ export default async function HomePage() {
         );
       }
       )}
-      <div className="flex items-center gap-4 mt-8 text-white">
-        {data.socials.map((social) => (
-          <a
-            aria-label={`${social.title} link`}
-            key={social.href}
-            href={social.href}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {social.href.includes('twitter') ? (
-              <TwitterIcon />
-            ) : social.href.includes('github') ? (
-              <GitHubIcon />
-            ) : null}
-          </a>
-        ))}
-      </div>
     </div>
   );
 }
