@@ -67,7 +67,7 @@ function LinkCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center p-1 w-full rounded-full hover:scale-105 transition-all bg-gray-100 mb-3 max-w-3xl"
+      className="flex items-center p-2 w-full rounded-full hover:scale-105 transition-all bg-gray-100 mb-3 max-w-3xl"
     >
       <div className="flex text-center w-full">
         <div className="w-10 h-10">
@@ -127,7 +127,7 @@ export default async function HomePage() {
         height={96}
       />
       <h1 className="font-bold mt-4 text-xl text-white">{data.name}</h1>
-      <h2 className="mt-4 mb-8 text-base text-white">{data.subtitle}</h2>
+      <h2 className="mt-4 mb-8 text-base text-white text-center">{data.subtitle}</h2>
       {data.sections.map((section) => {
         return (
           <div className="flex items-center flex-col mx-auto w-full justify-center">

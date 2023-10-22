@@ -4,16 +4,6 @@
 
 body {
   height: 100vh;
-  background-image: linear-gradient(
-    25deg,
-    hsl(48deg 82% 57%) 0%,
-    hsl(55deg 62% 57%) 11%,
-    hsl(99deg 52% 64%) 23%,
-    hsl(140deg 61% 62%) 36%,
-    hsl(158deg 70% 55%) 48%,
-    hsl(168deg 64% 51%) 61%,
-    hsl(175deg 63% 49%) 74%,
-    hsl(187deg 68% 50%) 87%,
-    hsl(189deg 75% 49%) 100%
-  );
+  background: rgb(235,199,55);
+  background: linear-gradient(25deg, rgba(235,199,55,1) 0%, rgba(213,202,77,1) 11%, rgba(149,211,115,1) 23%, rgba(100,217,138,1) 36%, rgba(60,221,162,1) 48%, rgba(51,210,178,1) 61%, rgba(47,204,191,1) 74%, rgba(43,194,214,1) 87%, rgba(35,191,219,1) 100%);
 }
