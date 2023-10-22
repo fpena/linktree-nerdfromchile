@@ -94,7 +94,6 @@ interface Data {
   subtitle: string;
   avatar: string;
   sections: Section[];
-  socials: Social[];
 }
 
 interface Section {
