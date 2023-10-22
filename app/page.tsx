@@ -91,9 +91,15 @@ function LinkCard({
 
 interface Data {
   name: string;
+  subtitle: string;
   avatar: string;
-  links: Link[];
+  sections: Section[];
   socials: Social[];
+}
+
+interface Section {
+  title: string;
+  links: Link[];
 }
 
 interface Link {
@@ -125,10 +131,19 @@ export default async function HomePage() {
         width={96}
         height={96}
       />
-      <h1 className="font-bold mt-4 mb-8 text-xl text-white">{data.name}</h1>
-      {data.links.map((link) => (
-        <LinkCard key={link.href} {...link} />
-      ))}
+      <h1 className="font-bold mt-4 text-xl text-white">{data.name}</h1>
+      <h2 className="mt-4 mb-8 text-base text-white">{data.subtitle}</h2>
+      {data.sections.map((section) => {
+        return (
+          <div className="flex items-center flex-col mx-auto w-full justify-center">
+            {section.title.length > 0 && <h3 className="mt-4 mb-8 text-base text-white">{section.title}</h3>}
+            {section.links.map((link) => (
+              <LinkCard key={link.href} {...link} />
+            ))}
+          </div>
+        );
+      }
+      )}
       <div className="flex items-center gap-4 mt-8 text-white">
         {data.socials.map((social) => (
           <a
